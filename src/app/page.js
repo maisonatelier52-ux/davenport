@@ -72,6 +72,24 @@ const healthcareNews = [
     { badges: [{ text: "Politics", color: "bg-[#00008b]" }], title: "Putting Premium Gas in an Engine That Requires Regular?", date: "March 25, 2019" },
     { badges: [{ text: "Lifestyle", color: "bg-[#c2185b]" }], title: "Trump angrily turns on Fox News after interview with Bernie Sanders", date: "March 25, 2019" }
   ];
+const newsList = [
+    { category: "Celebrity", color: "bg-[#e91e63]", title: "Donald Trump attacks Bernie Sanders' tax returns, makes 2020 election prediction", image: "/Davenport4-6.jpg", date: "March 26, 2019" },
+    { category: "Business", color: "bg-[#2196f3]", title: "Pinterest prices IPO at $19 a share, valuation tops $10 billion", image: "/Davenport4-2-1024x683.jpg", isSponsored: true },
+    { category: "Business", color: "bg-[#2196f3]", title: "2020 Democrats Seek Voters in an Unusual Spot: Fox News", image: "/Davenport4-6.jpg", date: "March 25, 2019" },
+    { category: "Business", color: "bg-[#2196f3]", title: "Macron vows to rebuild a 'more beautiful' Notre-Dame in 5 years", image: "/Davenport4-2-1024x683.jpg", date: "March 25, 2019" },
+    { category: "World", color: "bg-[#2196f3]", title: "Mercedes 'very sorry' after China consumer gripe goes viral", image: "/Davenport4-6.jpg", isSponsored: true },
+    { category: "Business", color: "bg-[#2196f3]", title: "China selfie app firm Meitu forays into skincare to counter drop in users", image: "/Davenport4-2-1024x683.jpg", date: "March 25, 2019" },
+    { category: "Politics", color: "bg-[#00008b]", title: "Putting Premium Gas in an Engine That Requires Regular?", image: "/Davenport4-6.jpg", date: "March 25, 2019" },
+  ];
+
+  const categories = [
+    { name: "Business", count: 8, color: "bg-[#2196f3]" },
+    { name: "Celebrity", count: 6, color: "bg-[#e91e63]" },
+    { name: "Lifestyle", count: 3, color: "bg-[#c2185b]" },
+    { name: "Politics", count: 6, color: "bg-[#00008b]" },
+    { name: "Video", count: 3, color: "bg-[#e91e63]" },
+    { name: "World", count: 3, color: "bg-[#2196f3]" },
+  ];
   return (
     <main className="bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 pt-4 pb-20">
@@ -270,8 +288,110 @@ const healthcareNews = [
         <Newsletter />
         {/* Top Ad Banner - Standard Newspaper Placement */}
         <AdBanner />
+{/* THE FLEX WRAPPER: Added 'items-start' to allow the sidebar to slide */}
+<div className="flex flex-col md:flex-row items-start gap-10 mt-12">
+  
+  {/* LEFT COLUMN: News Feed (8/12 width) */}
+  <div className="flex-1 space-y-12">
+    {newsList.map((item, idx) => (
+      <div key={idx}>
+        {/* Horizontal Ad after 4 cards - Fixed unit syntax 'h-[90px]' */}
+        {idx === 4 && (
+          <div className="w-full bg-[#f2f2f2] h-[90px] flex items-center justify-center border border-gray-100 mb-12">
+            <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#cccccc]">728x90 AD</span>
+          </div>
+        )}
+        
+        <div className="flex flex-col sm:flex-row gap-8 group cursor-pointer border-b border-gray-100 pb-12 last:border-0">
+          <div className="relative w-full sm:w-[320px] aspect-[4/3] overflow-hidden">
+            <img src={item.image} className="w-full h-full object-cover transition-transform group-hover:scale-105" alt={item.title} />
+            <span className={`${item.color} absolute bottom-4 left-4 text-white text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider`}>
+              {item.category}
+            </span>
+          </div>
+          <div className="flex-1 space-y-4">
+            <div className="text-[11px] text-gray-400 flex items-center gap-1">
+              {item.isSponsored ? "🔔 Sponsored content" : `📅 ${item.date}`}
+            </div>
+            <h3 className="text-[22px] font-bold leading-tight text-[#222] group-hover:text-blue-600 transition-colors">
+              {item.title}
+            </h3>
+            <div className="text-[11px] font-bold text-gray-400 uppercase">By <span className="text-gray-600">Davenport</span></div>
+            <p className="text-gray-500 text-[14px] leading-relaxed line-clamp-3">
+              Come dinnertime, the intimate group of guests was first ushered into the foyer for a staircase...
+            </p>
+            <div className="flex justify-between items-center pt-4">
+              <button className="bg-[#2196f3] text-white px-6 py-2.5 text-[11px] font-bold uppercase tracking-widest hover:bg-blue-600">Read More</button>
+              <div className="flex gap-4 text-gray-400 text-[12px]">
+                <span className="flex items-center gap-1 text-black font-bold uppercase"><Share2 size={14}/> Share</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  {/* RIGHT COLUMN: Sidebar - Fixed width 'md:w-[360px]' */}
+  <aside className="w-full md:w-[360px]">
+    {/* This inner div is what actually sticks. 
+        'top-24' keeps it below your sticky header.
+    */}
+    <div className="sticky top-24 space-y-12">
+      
+      {/* Major Ad Box */}
+      <div className="bg-[#d1d5db] aspect-[3/4] flex flex-col items-center justify-center p-8 text-center space-y-6 relative border border-gray-200"
+           style={{ backgroundImage: 'linear-gradient(to bottom, #d1d5db, #a5b4fc)' }}>
+        <div className="text-4xl font-serif italic text-black" style={{ fontFamily: 'var(--font-davenport)' }}>Davenport</div>
+        <div className="text-[13px] font-bold uppercase tracking-widest text-gray-700">Follow the News</div>
+        <div className="py-8 border-y border-black/10 w-full text-[17px] font-bold leading-tight">
+          Blog and Magazine<br/>WordPress Theme
+        </div>
+        <p className="text-[12px] text-gray-600">Readers in Europe<br/>Subscribe for $1 a week</p>
+        <button className="bg-[#2196f3] text-white px-8 py-3 text-[11px] font-bold uppercase tracking-widest w-full shadow-lg">Buy Now</button>
       </div>
 
+      {/* Trending Today */}
+      <div className="space-y-6">
+        <div className="border-b-2 border-black pb-1">
+          <h2 className="text-[18px] font-bold uppercase tracking-tight">Trending today</h2>
+        </div>
+        <div className="grid grid-cols-2 gap-4">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="space-y-2 group cursor-pointer">
+              <div className="aspect-video overflow-hidden">
+                 <img src={`/trend-${i}.jpg`} className="object-cover w-full h-full transition-transform group-hover:scale-105" alt="trending" />
+              </div>
+              <h4 className="text-[13px] font-bold leading-tight group-hover:text-blue-600 transition-colors line-clamp-2">
+                Wall Street slips, weighed down by healthcare plunge
+              </h4>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Categories - Fixed unit 'h-[45px]' */}
+      <div className="space-y-6">
+        <div className="border-b-2 border-black pb-1">
+          <h2 className="text-[18px] font-bold uppercase tracking-tight">Categories</h2>
+        </div>
+        <div className="space-y-1">
+          {categories.map((cat, i) => (
+            <div key={i} className="relative group cursor-pointer overflow-hidden h-[45px] flex items-center px-4">
+              <div className="absolute inset-0 bg-black/60 z-10 group-hover:bg-black/40 transition-colors" />
+              <img src={`/cat-${i}.jpg`} className="absolute inset-0 w-full h-full object-cover" alt={cat.name} />
+              <div className="relative z-20 flex justify-between w-full text-white font-bold uppercase text-[12px] tracking-widest">
+                <span>{cat.name}</span>
+                <span className={`${cat.color} px-2 py-0.5 text-[10px]`}>{cat.count}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>
+</div>
     </main>
   );
 }
