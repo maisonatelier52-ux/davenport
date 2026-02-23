@@ -23,7 +23,7 @@ const Header = () => {
       <div className="w-full bg-[#111827] text-white text-[11px] font-bold uppercase tracking-wider">
          <div className="max-w-7xl mx-auto flex items-center h-10 px-4">
             {/* ... trending content ... */}
-            <div className="bg-[#1f2937] h-full flex items-center px-4 mr-4 hidden lg:flex">
+            <div className="bg-[#1f2937] h-full items-center px-4 mr-4 hidden lg:flex">
                 <span className="flex items-center gap-2">📅 FRIDAY, 18 APRIL 2025</span>
             </div>
             <div className="bg-[#0f172a] h-full flex items-center px-6 mr-4">TRENDING</div>
@@ -68,13 +68,13 @@ const Header = () => {
           <h1 className="text-4xl md:text-7xl font-normal text-black" style={{ fontFamily: 'var(--font-davenport)' }}>Davenport</h1>
           <div className="flex items-center gap-4">
              <div className="hidden sm:flex gap-3 text-black"><Facebook size={18} /><Instagram size={18} /><Twitter size={18} /><Youtube size={18} /></div>
-             <Search size={20} className="cursor-pointer stroke-[3]" />
+             <Search size={20} className="cursor-pointer stroke-3" />
           </div>
         </div>
       </div>
 
 {/* 4. PRIMARY NAVIGATION - Updated for visibility */}
-<div className="sticky top-0 z-[100] w-full bg-white border-t border-black border-b border-gray-200 hidden md:block shadow-md">
+<div className="sticky top-0 z-100 w-full bg-white border-t border-black border-b border-gray-200 hidden md:block shadow-md">
   <nav className="max-w-7xl mx-auto px-4 flex justify-center items-center gap-12 py-4 font-bold uppercase text-[13px] tracking-[0.15em]">
     {navLinks.map((link) => (
       <a 
@@ -93,7 +93,7 @@ const Header = () => {
 </div>
 
       {/* 5. MOBILE MENU - Sticky for mobile view */}
-      <div className={`sticky top-0 z-[100] md:hidden bg-white border-t border-gray-100 transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-[500px] shadow-lg' : 'max-h-0'}`}>
+      <div className={`sticky top-0 z-100 md:hidden bg-white border-t border-gray-100 transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-125 shadow-lg' : 'max-h-0'}`}>
         <nav className="flex flex-col">
           {navLinks.map((link) => (
             <a key={link.name} href={link.href} className="flex items-center justify-between px-6 py-4 border-b border-gray-50 last:border-none">
