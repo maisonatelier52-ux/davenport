@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import NewsCard from "@/components/newscard";
+import NewsCard from "@/components/NewsCard";
 import { Share2, Bell, Calendar } from 'lucide-react';
 import Newsletter from "@/components/Newsletter";
 import AdBanner from "@/components/AdBanner";
