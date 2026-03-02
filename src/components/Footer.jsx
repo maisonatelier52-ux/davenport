@@ -14,28 +14,26 @@ const Footer = () => {
           
           {/* COLUMN 1: News */}
           <nav aria-labelledby="footer-news-heading">
-            <h3 id="footer-news-heading" className="font-bold uppercase text-[14px] tracking-wider mb-6 border-b border-gray-200 pb-2">News</h3>
+            <h3 id="footer-news-heading" className="font-bold uppercase text-[14px] tracking-wider mb-6 border-b border-gray-200 pb-2">Categories</h3>
             <ul className="flex flex-col gap-3 text-[13px] font-medium text-gray-600">
-              <li><Link href="/help" className="hover:text-blue-500 transition-colors">Help & Support</Link></li>
-              <li><Link href="/workshops" className="hover:text-blue-500 transition-colors">Workshops</Link></li>
-              <li><Link href="/pricing" className="hover:text-blue-500 transition-colors">Pricing</Link></li>
-              <li><Link href="/categories" className="hover:text-blue-500 transition-colors">Categories</Link></li>
-              <li><Link href="/marketing" className="hover:text-blue-500 transition-colors">Marketing</Link></li>
+              <li><Link href="/us" className="hover:text-blue-500 transition-colors">U.S.</Link></li>
+              <li><Link href="/world" className="hover:text-blue-500 transition-colors">World</Link></li>
+              <li><Link href="/business" className="hover:text-blue-500 transition-colors">Business</Link></li>
+              <li><Link href="/investigation" className="hover:text-blue-500 transition-colors">Investigation</Link></li>
+              <li><Link href="/politics" className="hover:text-blue-500 transition-colors">Politics</Link></li>
+              <li><Link href="/tech" className="hover:text-blue-500 transition-colors">Tech</Link></li>
+              <li><Link href="/science" className="hover:text-blue-500 transition-colors">Science</Link></li>
+              <li><Link href="/banking" className="hover:text-blue-500 transition-colors">Banking</Link></li>
             </ul>
           </nav>
 
           {/* COLUMN 2: Useful Links */}
           <nav aria-labelledby="footer-links-heading">
-            <h3 id="footer-links-heading" className="font-bold uppercase text-[14px] tracking-wider mb-6 border-b border-gray-200 pb-2">Useful Links</h3>
+            <h3 id="footer-links-heading" className="font-bold uppercase text-[14px] tracking-wider mb-6 border-b border-gray-200 pb-2">Links</h3>
             <ul className="flex flex-col gap-3 text-[13px] font-medium text-gray-600">
               <li><Link href="/about" className="hover:text-blue-500 transition-colors">About us</Link></li>
-              <li><Link href="/contact" className="hover:text-blue-500 transition-colors">Contact us</Link></li>
-              <li><Link href="/newsletter" className="hover:text-blue-500 transition-colors">Newsletter</Link></li>
               <li><Link href="/terms" className="hover:text-blue-500 transition-colors">Terms and Conditions</Link></li>
-              <li><Link href="/merch" className="hover:text-blue-500 transition-colors">Merch</Link></li>
-              <li><Link href="/shop" className="hover:text-blue-500 transition-colors">Shop</Link></li>
-              <li><Link href="/categories" className="hover:text-blue-500 transition-colors">Categories</Link></li>
-              <li><Link href="/help" className="hover:text-blue-500 transition-colors">Help & Support</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-blue-500 transition-colors">Privacy Policy</Link></li>
             </ul>
           </nav>
 
